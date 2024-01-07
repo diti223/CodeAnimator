@@ -14,7 +14,6 @@ struct ContentView: View {
     HStack {
         ForEach(Array(textVersions.enumerated()), id: \\.offset) { (index, version) in
             Text(String(index))
-                .foregroundStyle(Color.white)
                 .background(
                     Circle().foregroundStyle(Color.black)
                 )
@@ -44,6 +43,8 @@ struct ContentView: View {
     
     @State var isEditing = false
     
+    @Namespace var namespace
+    
     var body: some View {
         VStack {
             HStack {
@@ -62,24 +63,16 @@ struct ContentView: View {
                         }
                 }
             }
-//            TextEditor(text: $text).transition(.scale)
             VStack(alignment: .leading) {
                 let textLines = text.split(separator: "\n").map { String($0) }
                 ForEach(Array(textLines.enumerated()), id: \.offset) { (index, line) in
                     HStack {
                         Text("\(index+1).")
                         Text(line)
-//                        HStack(spacing: 1) {
-//                            let words = line.split(separator: " ").map { String($0) }
-//                            ForEach(Array(words.enumerated()), id: \.offset) { (index, word) in
-//                                Text(word + " ")
-//                                    .transition(.opacity.combined(with: .move(edge: .trailing)))
-//                            }
-//                        }
+                            .matchedGeometryEffect(id: line, in: namespace)
+                            .transition(.opacity.combined(with: .move(edge: .trailing)))
                     }
-                    .transition(.opacity.combined(with: .move(edge: .trailing)))
                 }
-//                .transition(.opacity.combined(with: .move(edge: .trailing)))
             }
             
             Button(action: {
@@ -96,37 +89,7 @@ struct ContentView: View {
     private func saveVersion() {
         textVersions.append(text)
     }
-    
-//    private var editingContent: some View {
-//        RSTextView(text: $text)
-//    }
 }
-
-//struct RSTextView: UIViewRepresentable {
-//    @Binding var text: String
-//    
-//    func makeUIView(context: Context) -> TextView {
-//        let view = TextView()
-//        view.text = text
-//        return view
-//    }
-//    
-//    func updateUIView(_ uiView: TextView, context: Context) {
-////        uiView.editorDelegate = Coordinator(text: $text)
-//    }
-//    
-//    class Coordinator: TextViewDelegate {
-//        var text: Binding<String>
-//        
-//        init(text: Binding<String>) {
-//            self.text = text
-//        }
-//        func textViewDidChange(_ textView: TextView) {
-//            self.text.wrappedValue = textView.text
-//            
-//        }
-//    }
-//}
 
 #Preview {
     ContentView()

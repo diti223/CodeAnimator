@@ -11,7 +11,6 @@
 		3A31C8FE2B44A5B300D07194 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31C8FD2B44A5B300D07194 /* ContentView.swift */; };
 		3A31C9002B44A5B500D07194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A31C8FF2B44A5B500D07194 /* Assets.xcassets */; };
 		3A31C9032B44A5B500D07194 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A31C9022B44A5B500D07194 /* Preview Assets.xcassets */; };
-		3A31C90B2B45AFD300D07194 /* Runestone in Frameworks */ = {isa = PBXBuildFile; productRef = 3A31C90A2B45AFD300D07194 /* Runestone */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A31C90B2B45AFD300D07194 /* Runestone in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +84,6 @@
 			);
 			name = CodeAnimator;
 			packageProductDependencies = (
-				3A31C90A2B45AFD300D07194 /* Runestone */,
 			);
 			productName = CodeAnimator;
 			productReference = 3A31C8F82B44A5B300D07194 /* CodeAnimator.app */;
@@ -117,7 +114,6 @@
 			);
 			mainGroup = 3A31C8EF2B44A5B300D07194;
 			packageReferences = (
-				3A31C9092B45AFD300D07194 /* XCRemoteSwiftPackageReference "Runestone" */,
 			);
 			productRefGroup = 3A31C8F92B44A5B300D07194 /* Products */;
 			projectDirPath = "";
@@ -356,25 +352,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3A31C9092B45AFD300D07194 /* XCRemoteSwiftPackageReference "Runestone" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simonbs/Runestone";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3A31C90A2B45AFD300D07194 /* Runestone */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3A31C9092B45AFD300D07194 /* XCRemoteSwiftPackageReference "Runestone" */;
-			productName = Runestone;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A31C8F02B44A5B300D07194 /* Project object */;
 }
